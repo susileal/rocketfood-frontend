@@ -4,59 +4,56 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-rows: 136px auto;
+  grid-template-rows: 9.6rem auto 7.7rem;
   grid-template-areas:
   "header"
-  "content";
+  "content"
+  "footer";
 
-  >footer{
-    margin-top: 19.9rem;
+  overflow-y: scroll;
+
+  > main{
+    grid-area: content;
+    padding: 10.0rem 0;
   }
 
-  >a{
-    margin-left: 12.2rem;
-  }
-
- 
 `;
 
 export const Profile = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    margin-right: 4.7rem;
    
->img{
-  margin-right: 4.7rem;
-}
+  >a{
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-bottom:4.2rem;
+  }
 
->div{
-  width: 68.7rem;
-  height: 30.0rem;
+`;
+
+export const Content = styled.div`
+  max-width: 80.0rem;
+  margin: 0 auto;
+  display: flex;
 
   h1{
     font-size: 4.0rem;
     font-weight: 500;
     margin-bottom: 2.4rem;
- 
   }
 
   p{
     font-size: 2.4rem;
     font-weight: 400;
-    margin-bottom: 2.4rem;
     text-align: justify;
   }
 
   button{
-   width: 13.1rem;  
-   
+    width: 13.1rem;   
   }
-
-  
-    
-    
-  }
-
 `;
 
 

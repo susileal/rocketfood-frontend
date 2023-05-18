@@ -1,11 +1,8 @@
-import { Container, Profile} from "./styles";
-
-
-import {BsHexagonFill } from 'react-icons/bs';
+import { Container} from "./styles";
 
 
 
-
+import { Logo } from "../../components/Logo"  
 
 export function Footer(){
   
@@ -14,23 +11,8 @@ export function Footer(){
     <Container>
 
 
-      <Profile to="/profile" >
-       <BsHexagonFill/>
-
-      <div>
-        <span>food explorer</span>
-        
-      </div>
-      </Profile>
-      
+      <Logo title="food explorer" isActive></Logo>
       <span> © 2023 - Todos os direitos reservados. </span>
-      
-  
-     
-      
-        
-
-
     </Container>
   )
 

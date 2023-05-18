@@ -29,6 +29,6 @@ export const Container = styled.div`
   }
 
   > svg{
-    margin-left: 14.4rem;
+    margin-left: 12rem;
   }
 `;

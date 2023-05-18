@@ -1,6 +1,6 @@
-import { Container, Profile } from "./styles.js"
+import { Container, Content, Profile } from "./styles.js"
 
-import { FiArrowLeft} from 'react-icons/fi';
+import { IoIosArrowBack} from 'react-icons/io';
 
 
 import { Header } from "../../components/Header"
@@ -18,41 +18,41 @@ export function Dish(){
 
       <Header></Header>
 
-      <a to='/'>
-        <FiArrowLeft/> Voltar
-      </a>
-      <Profile>
-
-        <img src="../../assets/dish.png" alt="prato" />
-
-        <div>
-          <h1> Salada Ravanello </h1>
-          <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.</p>
-         
-         <Section>
-         <Tag title="alface"/>
-         <Tag title="cebola"/>
-         <Tag title="pão naan"/>
-         <Tag title="pepino"/>
-         <Tag title="rabanete"/>
-         <Tag title="tomate"/>
+      <main>
+        <Content>
 
 
+          <Profile>
+                    <a to='/'>
+                      <IoIosArrowBack/> voltar
+                    </a>
 
-         </Section>
-            
-          <Button title="Editar prato"></Button>
-         
-        </div>
+                    <img src="../../assets/dish.png" alt="prato" />
+          </Profile>
 
-      </Profile>
-     
+          <div>
+            <h1> Salada Ravanello </h1>
+            <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.</p>
+          
+            <Section>
+              <Tag title="alface"/>
+              <Tag title="cebola"/>
+              <Tag title="pão naan"/>
+              <Tag title="pepino"/>
+              <Tag title="rabanete"/>
+              <Tag title="tomate"/>
+            </Section>
+              
+            <Button title="Editar prato"></Button>
+          
+          </div>
 
-      <footer>
+      </Content>
+    </main>
 
-            <Footer></Footer>
-      </footer>
-
+    
+        <Footer></Footer>
+   
       
     </Container>
   )
