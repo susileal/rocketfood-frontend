@@ -16,7 +16,11 @@ export function Header(){
   return(
     <Container>
 
-      <Logo title="food explorer"></Logo>
+    <header>
+          <Logo title="food explorer"> </Logo>
+          <span >admin</span>
+
+    </header>
 
     <Search>
       <Input 

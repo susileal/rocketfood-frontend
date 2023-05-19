@@ -48,15 +48,10 @@ export const Search  = styled.div`
 `;
 
 export const Content  = styled.div`
- 
+  overflow-y: auto;
   grid-area: content;
   padding: 0 12.4rem;
  
-  
-
-    
-
-  
   
 `;
 

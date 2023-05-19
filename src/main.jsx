@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/global"
 
 import theme from './styles/theme';
-import {Dish} from './pages/Dish'
+import {SignIn} from './pages/SignIn'
 
 
 
@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles/>
-      <Dish />
+      <SignIn />
     </ThemeProvider>
   </React.StrictMode>,
 )

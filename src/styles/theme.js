@@ -6,17 +6,18 @@ export default {
     BACKGROUND_600: "#192227;",
     BACKGROUND_500: "#0D1D25;",
     BACKGROUND_400: "#750310;",
+    BACKGROUND_300: "#001119;",
 
     WHITE: "#FFFFFF;",
     WHITE_100: "#E1E1E6;",
     WHITE_200: "#FFFAF1;",
     BLUE: " #82F3FF;",
     BLUE_100:"#065E7C;",
-    TRANSPARENT: "transparent",
+   
 
-    GRAY_100: "#7C7C8A",
-    GRAY_200: "#4D585E",
-    GRAY_300: "#666360",
+    GRAY_100: "#7C7C8A;",
+    GRAY_200: "#4D585E;",
+    GRAY_300: "#C4C4CC;",
 
     RED: "#FF002E"
   }

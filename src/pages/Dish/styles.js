@@ -15,45 +15,54 @@ export const Container = styled.div`
   > main{
     grid-area: content;
     padding: 10.0rem 0;
+    margin-left:12.2rem;
+
+    >a{
+      display: flex;
+      align-items: center;
+      font-size: 2.4rem;
+      font-weight: 500;
+    }
   }
 
-`;
-
-export const Profile = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-right: 4.7rem;
-   
-  >a{
-    display: flex;
-    align-items: center;
-    font-size: 2.4rem;
-    font-weight: 500;
-    margin-bottom:4.2rem;
-  }
 
 `;
 
 export const Content = styled.div`
+  display: flex;
+  align-items: center;
   max-width: 80.0rem;
   margin: 0 auto;
-  display: flex;
+ 
+  
+  >img{
 
-  h1{
-    font-size: 4.0rem;
-    font-weight: 500;
-    margin-bottom: 2.4rem;
+    margin: 4.2rem 4.7rem 0 0 ;
   }
 
-  p{
-    font-size: 2.4rem;
-    font-weight: 400;
-    text-align: justify;
+ 
+  >div{
+    width: 68.7rem;
+
+    h1{
+      font-size: 4.0rem;
+      font-weight: 500;
+    }
+  
+    p{
+      font-size: 2.4rem;
+      font-weight: 400;
+      text-align: justify;
+      margin: 2.4rem 0;
+    }
+  
+    button{
+      margin-top: 4.8rem;
+      width: 13.1rem;  
+    }
   }
 
-  button{
-    width: 13.1rem;   
-  }
+  
 `;
 
 

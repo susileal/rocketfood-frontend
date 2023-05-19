@@ -7,7 +7,7 @@ export const Container = styled.div`
   
   background-color: ${({ theme}) => theme.COLORS.BACKGROUND_500};
   color: ${({ theme}) => theme.COLORS.GRAY_300};
-
+  
   border-radius: 0.5rem;
  
   > input {
@@ -20,7 +20,8 @@ export const Container = styled.div`
     font-weight: 400;
 
     background: transparent;
-    border: 0;
+    border: ${({isBorder}) => isBorder ? "1px solid #FFFFFF" : "0"};
+    border-radius: 0.5rem;
 
     &:placeholder{
       color: ${({ theme}) => theme.COLORS.BACKGROUND_500};
@@ -29,6 +30,6 @@ export const Container = styled.div`
   }
 
   > svg{
-    margin-left: 12rem;
+    margin-left: 14.4rem;
   }
 `;

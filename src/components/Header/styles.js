@@ -14,6 +14,20 @@ export const Container = styled.header`
   >button{
     width: 21.6rem;
   }
+    >header{
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+
+      span{
+          font-size: 1.2rem;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 400;
+          color: ${({theme}) => theme.COLORS.BLUE};
+        }
+
+    }
+  
 
   `;
 
@@ -35,7 +49,7 @@ export const Logout = styled.button`
       display: flex;
       align-items: center;
       margin-left: 3.2rem;
-     
+    
 `;
 
 
