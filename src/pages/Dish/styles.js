@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -10,18 +11,17 @@ export const Container = styled.div`
   "content"
   "footer";
 
-  overflow-y: scroll;
-
   > main{
     grid-area: content;
-    padding: 10.0rem 0;
-    margin-left:12.2rem;
-
-    >a{
+    padding: 2.5rem 12.2rem 15.5rem 12.2rem;
+   
+    
+    
+    a{
       display: flex;
       align-items: center;
       font-size: 2.4rem;
-      font-weight: 500;
+      
     }
   }
 
@@ -31,22 +31,23 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   align-items: center;
-  max-width: 80.0rem;
+  justify-content: center;
   margin: 0 auto;
- 
   
-  >img{
 
+  >img{
+    width: 39.0rem;
     margin: 4.2rem 4.7rem 0 0 ;
   }
 
  
   >div{
     width: 68.7rem;
-
+    
     h1{
       font-size: 4.0rem;
       font-weight: 500;
+      line-height: 3.4rem
     }
   
     p{
@@ -54,6 +55,7 @@ export const Content = styled.div`
       font-weight: 400;
       text-align: justify;
       margin: 2.4rem 0;
+      line-height: 3.4rem
     }
   
     button{
@@ -62,8 +64,10 @@ export const Content = styled.div`
     }
   }
 
+ 
   
 `;
+
 
 
 

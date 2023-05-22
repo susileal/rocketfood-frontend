@@ -7,7 +7,7 @@ import { Container, Form } from "./styles";
 
 
 
-export function SignIn() {
+export function SignUp() {
   
   
 
@@ -18,25 +18,29 @@ export function SignIn() {
       </section>
 
       <Form>
-        <h1> Faça login </h1>
-        <label> Email </label>
+        <h1> Crie sua conta </h1>
+        <label> Seu nome </label>
           <Input
-            isBorder
-            placeholder="Exemplo: exemplo@exemplo.com.br"
+            placeholder="Exemplo: Maria da Silva"
             type="text"
           />
 
+        <label> Email </label>
+          <Input
+            placeholder="Exemplo: exemplo@exemplo.com.br"
+            type="password"
+          />  
+
         <label> Senha </label>
           <Input
-            isBorder
             placeholder="No mínimo 6 caracteres"
             type="password"
           />  
 
 
-        <Button title="Entrar" />
+        <Button title="Criar conta" />
 
-        <a to="/"> Criar uma conta </a>
+        <a to="/"> Já tenho uma conta </a>
         
       </Form>
 

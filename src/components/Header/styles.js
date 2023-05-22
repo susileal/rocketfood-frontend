@@ -9,16 +9,18 @@ export const Container = styled.header`
 
   display: flex;
   align-items: center;
-  padding-left: 12.3rem;
+  justify-content: center;
 
-  >button{
+  >section{
     width: 21.6rem;
+    
   }
     >header{
       display: flex;
       flex-direction: column;
       text-align: right;
-
+      margin-right: 4.3rem;
+      
       span{
           font-size: 1.2rem;
           font-family: 'Roboto', sans-serif;
@@ -32,7 +34,7 @@ export const Container = styled.header`
   `;
 
 export const Search = styled.div`
-  width: 51rem;
+  width: 58.1rem;
   display: flex;
   align-items: center;
   margin: 0 3.2rem 0;
@@ -49,7 +51,7 @@ export const Logout = styled.button`
       display: flex;
       align-items: center;
       margin-left: 3.2rem;
-    
+
 `;
 
 

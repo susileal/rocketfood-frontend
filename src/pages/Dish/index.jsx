@@ -1,6 +1,7 @@
 import { Container, Content} from "./styles.js"
 
 import { IoIosArrowBack} from 'react-icons/io';
+import dish from "../../assets/dish.png";
 
 
 import { Header } from "../../components/Header"
@@ -19,14 +20,11 @@ export function Dish(){
       <Header/>
 
       <main>
-                    <a to='/'>
-                      <IoIosArrowBack/> voltar
-                    </a>
-        
+          <a to='/'>
+            <IoIosArrowBack/> voltar
+          </a>
         <Content>
-
-          <img src="../../assets/dish.png" alt="prato" />
-         
+          <img src={dish} alt="imagem de prato" />
           <div>
             <h1> Salada Ravanello </h1>
             <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.</p>

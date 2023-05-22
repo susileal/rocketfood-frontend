@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
  
   > section{
     margin-left: 15.5rem;
@@ -19,8 +20,8 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   width: 47.6rem;
-  height: 54.0rem;
-  margin: 14.2rem 10.8rem;
+  height: 62.1rem;
+  margin: 9.0rem 10.8rem;
   padding: 6.4rem;
   border-radius: 1.6rem;
   

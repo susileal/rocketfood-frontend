@@ -31,8 +31,10 @@ export function Header(){
 
     </Search>
    
-  
-    <Button title="Novo prato"></Button>
+    <section>
+      <Button title="Novo prato"></Button>
+
+    </section>
    
     <Logout > <FiLogOut/> </Logout> 
      
