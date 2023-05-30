@@ -13,16 +13,8 @@ export const Container = styled.div`
 
   > main{
     grid-area: content;
-    padding: 2.5rem 12.2rem 15.5rem 12.2rem;
    
-    
-    
-    a{
-      display: flex;
-      align-items: center;
-      font-size: 2.4rem;
-      
-    }
+   
   }
 
 
@@ -32,15 +24,17 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
   
-
-  >img{
-    width: 39.0rem;
-    margin: 4.2rem 4.7rem 0 0 ;
+  > header{
+    display: flex;
+    flex-direction: column;
+    margin: 2.4rem 0 15.5rem;
+    img{
+      width: 39.0rem;
+      margin: 4.2rem 4.7rem 0 0 ;
+    }
   }
-
- 
+  
   >div{
     width: 68.7rem;
     

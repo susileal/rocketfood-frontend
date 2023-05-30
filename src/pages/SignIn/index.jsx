@@ -1,6 +1,8 @@
 
+import { SectionForm } from "../../components/SectionForm"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
+import { ButtonText } from "../../components/ButtonText"
 import { Logo } from "../../components/Logo"
 
 import { Container, Form } from "./styles";
@@ -19,24 +21,27 @@ export function SignIn() {
 
       <Form>
         <h1> Faça login </h1>
-        <label> Email </label>
+        <SectionForm title="Email">
           <Input
             isBorder
             placeholder="Exemplo: exemplo@exemplo.com.br"
             type="text"
           />
+        </SectionForm>
 
-        <label> Senha </label>
+        <SectionForm title="Senha"> 
+        
           <Input
             isBorder
             placeholder="No mínimo 6 caracteres"
             type="password"
           />  
+        </SectionForm>
 
 
         <Button title="Entrar" />
 
-        <a to="/"> Criar uma conta </a>
+        <ButtonText title="Criar uma conta">  </ButtonText>
         
       </Form>
 

@@ -7,6 +7,8 @@ export default {
     BACKGROUND_500: "#0D1D25;",
     BACKGROUND_400: "#750310;",
     BACKGROUND_300: "#001119;",
+    BACKGROUND_200: "#0D161B;",
+
 
     WHITE: "#FFFFFF;",
     WHITE_100: "#E1E1E6;",
@@ -18,7 +20,8 @@ export default {
     GRAY_100: "#7C7C8A;",
     GRAY_200: "#4D585E;",
     GRAY_300: "#C4C4CC;",
+    GRAY_400:"#76797B;",
 
-    RED: "#FF002E"
+    PINK: "#AB4D55"
   }
 }

@@ -8,6 +8,7 @@ import { Header } from "../../components/Header"
 
 import { Tag } from "../../components/Tag"
 import { Button } from "../../components/Button"
+import { ButtonText } from "../../components/ButtonText"
 
 import { Footer } from "../../components/Footer"
 
@@ -20,11 +21,11 @@ export function Dish(){
       <Header/>
 
       <main>
-          <a to='/'>
-            <IoIosArrowBack/> voltar
-          </a>
         <Content>
-          <img src={dish} alt="imagem de prato" />
+          <header>
+            <ButtonText title="voltar" isFont> <IoIosArrowBack/></ButtonText>
+            <img src={dish} alt="imagem de prato" />
+          </header>
           <div>
             <h1> Salada Ravanello </h1>
             <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.</p>

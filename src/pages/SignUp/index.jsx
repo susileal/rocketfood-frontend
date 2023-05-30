@@ -1,6 +1,8 @@
 
 import { Input } from "../../components/Input"
+import { SectionForm } from "../../components/SectionForm"
 import { Button } from "../../components/Button"
+import { ButtonText } from "../../components/ButtonText"
 import { Logo } from "../../components/Logo"
 
 import { Container, Form } from "./styles";
@@ -19,28 +21,33 @@ export function SignUp() {
 
       <Form>
         <h1> Crie sua conta </h1>
-        <label> Seu nome </label>
+        <SectionForm title="Seu nome">
+
           <Input
             placeholder="Exemplo: Maria da Silva"
             type="text"
           />
-
-        <label> Email </label>
+        </SectionForm>
+        
+        <SectionForm title="Email">
           <Input
             placeholder="Exemplo: exemplo@exemplo.com.br"
-            type="password"
-          />  
+            type="text"
+          />
+        </SectionForm>
 
-        <label> Senha </label>
+        <SectionForm title="Senha"> 
+        
           <Input
             placeholder="No mínimo 6 caracteres"
             type="password"
           />  
+        </SectionForm> 
 
 
         <Button title="Criar conta" />
 
-        <a to="/"> Já tenho uma conta </a>
+        <ButtonText title="Já tenho uma conta">  </ButtonText>
         
       </Form>
 

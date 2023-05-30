@@ -11,8 +11,8 @@ export const Container = styled.footer`
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 12.3rem;
+  justify-content: center;
+  
 
   
   >span{
@@ -20,6 +20,7 @@ export const Container = styled.footer`
     font-weight: 400;
     font-size: 1.4rem;
     color: ${({theme}) => theme.COLORS.WHITE_200};
+    margin-left: 69.4rem;
     
   
   }
