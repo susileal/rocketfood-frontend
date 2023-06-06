@@ -3,20 +3,20 @@ import { Container, Content, Search } from "./styles";
 import scone from "../../assets/scone.png";
 
 
-import { Header } from "../../components/Header"
+import { HeaderUsers } from "../../components/HeaderUsers"
 import { Footer } from "../../components/Footer"
 import { Section } from "../../components/Section"
-import { Card } from "../../components/Card"
+import { CardUsers } from "../../components/CardUsers"
 
 
-export function Home() {
+export function HomeUsers() {
  
   
   return (
     <Container>
 
      
-      <Header />
+      <HeaderUsers />
 
       <Search>
 
@@ -35,7 +35,7 @@ export function Home() {
       
 
       <Section title="Refeições">
-        <Card></Card>
+        <CardUsers></CardUsers>
       </Section>
       <Section title="Sobremesas"></Section>
       <Section title="Bebidas"></Section>

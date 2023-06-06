@@ -1,6 +1,6 @@
 import { Container } from './styles'
 
-export function Button({title, loading = false, children, isDelete, isSave, ...rest}){
+export function Button({title,number, loading = false, children, isDelete, isSave, ...rest}){
 
   return(
   <Container 
@@ -12,6 +12,7 @@ export function Button({title, loading = false, children, isDelete, isSave, ...r
     >
       {children}
       {loading ? 'Carregando...' : title}
+      {number}
 
 
   </Container>

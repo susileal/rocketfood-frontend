@@ -5,7 +5,8 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   
-  background-color: ${({ theme}) => theme.COLORS.BACKGROUND_500};
+  
+  background-color: ${({ theme, isColor}) => isColor ? "none" : theme.COLORS.BACKGROUND_500};
   color: ${({ theme}) => theme.COLORS.GRAY_300};
   
   border-radius: 0.5rem;
@@ -27,6 +28,16 @@ export const Container = styled.div`
       color: ${({ theme}) => theme.COLORS.BACKGROUND_500};
      
     }
+  }
+
+  input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+  }
+  input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+
   }
 
   > svg{

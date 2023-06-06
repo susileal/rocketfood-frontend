@@ -1,5 +1,6 @@
 import { IoIosArrowBack} from 'react-icons/io';
 import { AiOutlineUpload } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 
 import { Header } from "../../components/Header"
@@ -24,7 +25,10 @@ export function AddDish() {
   
     <main>
        
+       <Link to="/">
+       
         <ButtonText title="voltar" isFont> <IoIosArrowBack/></ButtonText>
+       </Link>
         <h1> Adicionar prato </h1>
       
           
@@ -42,7 +46,7 @@ export function AddDish() {
               placeholder="Ex.: Salada Ceasar"
             />
           </SectionForm>
-          <SectionForm title="Categoria" for="categoria"> 
+          <SectionForm title="Categoria" for="category"> 
             <select name="categoria" id="category">
               <option value="dish">Refeição</option>
               <option value="dessert">Sobremesa</option>
@@ -94,7 +98,11 @@ export function AddDish() {
 
       <section>
 
-        <Button title="Salvar alterações" />
+        <Link   to="/">
+          <Button title="Salvar alterações" />
+        
+        </Link>
+
       </section>
         
       

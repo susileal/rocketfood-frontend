@@ -1,8 +1,7 @@
 import { Container, Search, Logout} from "./styles";
 import { FiSearch, FiLogOut} from 'react-icons/fi';
+import { CiReceipt} from 'react-icons/ci';
 import { Link } from "react-router-dom";
-
-
 
 import { Logo } from "../../components/Logo"
 import { Button } from "../../components/Button"
@@ -11,17 +10,18 @@ import { Input } from '../Input';
 
 
 
-export function Header(){
+export function HeaderUsers(){
+  
   
 
   return(
     <Container>
 
-    
     <header>
-          <Logo title="food explorer"> </Logo>
-          <span >admin</span>
-
+      <Link to='/profile'>
+            <Logo title="food explorer"> </Logo>
+            <span> Susana Leal</span>
+      </Link>
     </header>
 
     <Search>
@@ -35,11 +35,14 @@ export function Header(){
    
     <section>
 
-      <Link to="/addDish">
       
-        <Button title="Novo prato"></Button>
+      
+        <Button title="Pedido" number="(0)"> 
+        <CiReceipt/> 
 
-      </Link>
+        </Button>
+
+     
 
 
     </section>

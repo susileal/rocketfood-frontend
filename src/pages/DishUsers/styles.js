@@ -14,7 +14,6 @@ export const Container = styled.div`
   > main{
     grid-area: content;
    
-   
   }
 
 
@@ -53,7 +52,7 @@ export const Content = styled.div`
     }
   
     button{
-      margin-top: 4.8rem;
+      
       width: 13.1rem;  
     }
   }
@@ -61,6 +60,8 @@ export const Content = styled.div`
   #user {
     display: flex;
     align-items: center;
+    text-align: center;
+    margin-top: 4.8rem;
 
     button {
       width: 16.2rem;

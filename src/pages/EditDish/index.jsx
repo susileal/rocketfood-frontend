@@ -1,5 +1,6 @@
 import { IoIosArrowBack} from 'react-icons/io';
 import { AiOutlineUpload } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 
 import { Header } from "../../components/Header"
@@ -24,7 +25,10 @@ export function EditDish() {
   
     <main>
         
+        <Link to="/">
+        
         <ButtonText title="voltar" isFont> <IoIosArrowBack/></ButtonText>
+        </Link>
        
         <h1> Editar prato </h1>
       
@@ -101,7 +105,11 @@ export function EditDish() {
       <section id='buttonEdit'>
 
         <Button title="Excluir prato" isDelete id="buttonDelete" />
-        <Button title="Salvar alterações" isSave id="buttonSave"  />
+
+        <Link to="/">
+          <Button title="Salvar alterações" isSave id="buttonSave"  />
+        
+        </Link>
       </section>
       
 

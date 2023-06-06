@@ -5,24 +5,22 @@ import { IoIosArrowBack} from 'react-icons/io';
 import dish from "../../assets/dish.png";
 
 
-import { Header } from "../../components/Header"
+import { HeaderUsers } from "../../components/HeaderUsers"
 
 import { Tag } from "../../components/Tag"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
+import { InputInclude } from "../../components/InputInclude"
+
+import { Footer } from "../../components/Footer/index.jsx"
 
 
-import { Footer } from "../../components/Footer"
-
-
-export function Dish(){
-
-  isadmin = user.is_admin
+export function DishUsers(){
  
   return(
     <Container>
 
-      <Header/>
+      <HeaderUsers/>
 
       <main>
         <Content>
@@ -45,11 +43,12 @@ export function Dish(){
                 <Tag title="tomate"/>
 
             </section>
-            
-            
-            <Link to="/editDish">
-              <Button title="Editar prato"></Button>
-            </Link>
+
+
+            <div id="user">
+              <InputInclude value="01"></InputInclude>
+              <Button title="incluir - R$25,00"> </Button>
+            </div>
 
           </div>
 

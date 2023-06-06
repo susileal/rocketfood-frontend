@@ -1,3 +1,7 @@
+import { useState } from 'react'
+import { Link } from "react-router-dom"
+
+import { useAuth } from "../../hooks/auth"
 
 import { SectionForm } from "../../components/SectionForm"
 import { Input } from "../../components/Input"
@@ -10,7 +14,15 @@ import { Container, Form } from "./styles";
 
 
 export function SignIn() {
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const {signIn} = useAuth();
+
+  function handleSignIn(){
+    signIn({email, password});
+
+  }
   
 
   return (
@@ -26,6 +38,7 @@ export function SignIn() {
             isBorder
             placeholder="Exemplo: exemplo@exemplo.com.br"
             type="text"
+            onChange={e => setEmail(e.target.value)}
           />
         </SectionForm>
 
@@ -35,13 +48,18 @@ export function SignIn() {
             isBorder
             placeholder="No mínimo 6 caracteres"
             type="password"
+            onChange={e => setPassword(e.target.value)}
           />  
         </SectionForm>
 
 
-        <Button title="Entrar" />
+        <Button title="Entrar" onClick={handleSignIn}/>
 
-        <ButtonText title="Criar uma conta">  </ButtonText>
+        <Link to="/register">
+          <ButtonText title="Criar uma conta">  </ButtonText>
+        
+        </Link>
+
         
       </Form>
 
