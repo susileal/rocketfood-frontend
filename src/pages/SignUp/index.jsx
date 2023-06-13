@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from 'react'
 
-import { api } from "../../../../rocketfood-backend/src/services/api"
+import { api } from "../../services/api"
 
 import { Input } from "../../components/Input"
 import { SectionForm } from "../../components/SectionForm"

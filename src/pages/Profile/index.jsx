@@ -1,6 +1,7 @@
-
+import { useState } from 'react';
+import { useAuth } from "../../hooks/auth"
 import { IoIosArrowBack} from 'react-icons/io';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Input } from "../../components/Input"
 import { HeaderUsers } from "../../components/HeaderUsers"
@@ -14,6 +15,34 @@ import { Container, Form} from "./styles";
 
 
 export function Profile() {
+
+  const { user, updateProfile } = useAuth();
+
+  const [name, setName] = useState(user.name);
+  const [email, setEmail] = useState(user.email);
+  const [passwordOld, setPasswordOld] = useState( );
+  const [passwordNew, setPasswordNew] = useState( );
+
+ 
+  const navigate = useNavigate();
+
+  function handleBack(){
+    navigate(-1);
+
+  }
+
+  async function handleUpdate(){
+    const updated ={
+      name,
+      email,
+      password: passwordNew,
+      old_password: passwordOld
+    };
+
+    const userUpdated = Object.assign(user, updated);
+
+    await updateProfile({ user: userUpdated});
+  }
  
 
 
@@ -26,7 +55,7 @@ export function Profile() {
 
         <header>
             <Link to="/">
-              <ButtonText title="voltar" isFont> <IoIosArrowBack/></ButtonText>
+              <ButtonText title="voltar" isFont onClick={handleBack}> <IoIosArrowBack/></ButtonText>
             </Link>
   
           </header>
@@ -38,6 +67,8 @@ export function Profile() {
           <Input
             placeholder="Exemplo: Maria da Silva"
             type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
           />
         </SectionForm>
         
@@ -45,6 +76,8 @@ export function Profile() {
           <Input
             placeholder="Exemplo: exemplo@exemplo.com.br"
             type="text"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
         </SectionForm>
 
@@ -53,6 +86,7 @@ export function Profile() {
           <Input
             placeholder="No mínimo 6 caracteres"
             type="password"
+            onChange={e => setPasswordOld(e.target.value)}
           />  
         </SectionForm> 
 
@@ -61,11 +95,12 @@ export function Profile() {
           <Input
             placeholder="No mínimo 6 caracteres"
             type="password"
+            onChange={e => setPasswordNew(e.target.value)}
           />  
         </SectionForm> 
             
         <Link Link to="/">
-            <Button title="Salvar" />
+            <Button title="Salvar" onClick={handleUpdate}/>
         </Link>
       </Form>
 

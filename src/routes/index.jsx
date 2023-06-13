@@ -1,5 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 
+import { useAuth } from "../hooks/auth"
+
 
 // importando as rotas
 
@@ -12,9 +14,11 @@ import { AppRoutesUsers } from "./app.routes.users";
 
 export function Routes(){
 
+  const {user} = useAuth();
+
   return (
     <BrowserRouter>
-     <AuthRoutes/> 
+     {user ? <AppRoutes/> : <AuthRoutes/> }
     </BrowserRouter>
   )
 }

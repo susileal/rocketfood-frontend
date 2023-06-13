@@ -1,6 +1,12 @@
-
+import { useState, useEffect, useRef } from "react";
 import { Container, Content, Search } from "./styles";
+import { useNavigate } from "react-router-dom";
 import scone from "../../assets/scone.png";
+
+
+import { motion } from "framer-motion"
+
+import { api } from "../../services/api"
 
 
 import { Header } from "../../components/Header"
@@ -10,17 +16,55 @@ import { Card } from "../../components/Card"
 
 
 export function Home() {
- 
+
+  const carousel = useRef()
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [dishes, setDishes] = useState([]);
+  const [width, setWidth] = useState(0);
+  const navigate = useNavigate()
   
+
+
+  function handleHeaderChange(searchTerm) {
+    setSearchTerm(searchTerm);
+
+  }
+
+  function handleDetails(id){
+    navigate(`/dish/${id}`);
+
+  }
+
+ 
+
+  useEffect(() => {
+    async function fetchDishes() {
+      const response = await api.get(`/dishes?name=${searchTerm}`);
+      setDishes(response.data)
+    }
+    fetchDishes();
+  },[searchTerm])
+
+  useEffect(() => {
+    console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth);
+    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
+  },[])
+
+
   return (
     <Container>
 
      
-      <Header />
+      <Header onHeaderChange={handleHeaderChange}/>
 
       <Search>
 
-        <img src={scone} alt="chuva de bolinhos" />
+        <motion.img 
+        initial={{y: 100}}
+        animate={{y: 0}}  
+        transition={{duration: 0.9}}
+        src={scone} alt="chuva de bolinhos" />
 
         <div>
           <h1> Sabores inigualáveis </h1>
@@ -35,10 +79,84 @@ export function Home() {
       
 
       <Section title="Refeições">
-        <Card></Card>
+        <motion.div className="carousel" whileTap={{cursor:"grabbing"}}>
+          <motion.div 
+            className="inner"
+            drag="x"
+            dragConstraints={{right:0, left: -width}}
+            
+          >
+            { 
+              
+              dishes
+              .filter(dish => (dish.category_id === 1))
+              .map(dish => (    
+                  <Card 
+                    key={String(dish.id)}
+                    data={dish}
+                    onClick={() => handleDetails(dish.id)}
+                    
+                  />
+
+                ))
+            }
+
+          </motion.div>
+
+        </motion.div>
+
       </Section>
-      <Section title="Sobremesas"></Section>
-      <Section title="Bebidas"></Section>
+      <Section title="Sobremesas">
+        <motion.div className="carousel" whileTap={{cursor:"grabbing"}}>
+          <motion.div 
+            className="inner"
+            drag="x"
+          >
+            { 
+              dishes
+              .filter(dish => (dish.category_id === 2))
+              .map(dish => (
+                
+                  <Card 
+                    key={String(dish.id)}
+                    data={dish}
+                    onClick={() => handleDetails(dish.id)}
+                   
+                  />
+
+                ))
+            }
+
+          </motion.div>
+
+        </motion.div>
+      </Section>
+      <Section title="Bebidas">
+      <motion.div className="carousel" whileTap={{cursor:"grabbing"}}>
+          <motion.div 
+            className="inner"
+            drag="x"
+          >
+            { 
+              dishes
+              .filter(dish => (dish.category_id === 3))
+              .map(dish => (
+                
+                  <Card 
+                    key={String(dish.id)}
+                    data={dish}
+                    onClick={() => handleDetails(dish.id)}
+                   
+                  />
+
+                ))
+            }
+
+          </motion.div>
+
+        </motion.div>
+
+      </Section>
 
       
       </Content>

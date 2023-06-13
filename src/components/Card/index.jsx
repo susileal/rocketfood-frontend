@@ -1,15 +1,18 @@
+
 import { Container } from "./styles";
 import { Link } from "react-router-dom";
 
 import { ButtonText } from "../ButtonText";
-import { Button } from "../Button";
+
 import { BiPencil } from 'react-icons/bi';
 import { IoIosArrowForward } from 'react-icons/io';
+
+
 
 import dish from "../../assets/dish.png";
 
 
-export function Card({ title, ...rest}) {
+export function Card({ data, ...rest}) {
 
   return (
     <Container {...rest}>
@@ -21,13 +24,18 @@ export function Card({ title, ...rest}) {
         </Link>
 
        </section>
+
+      
         <Link to="/dish/:id">
-        
-        <img src={dish} alt="imagem de prato" />
-        <h3> Salada Ravanello <IoIosArrowForward/> </h3>
-        <p> Rabanetes, folhas verdes e molho agridoce salpicados com gergelim </p>
-        <span> R$ 49,97 </span>
+          <img src={dish} alt="imagem de prato" />
         </Link>
+          <h3> {data.name}<IoIosArrowForward/> </h3>
+          <p> {data.description} </p>
+          <span> R$ {data.price} </span>
+
+       
+
+       
 
       
        

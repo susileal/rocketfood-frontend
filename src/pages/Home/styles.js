@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-
-
-
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -47,13 +44,24 @@ export const Search  = styled.div`
   }
     
     
-
-`;
+  
+  `;
 
 export const Content  = styled.div`
-  
+  width: 100%;
+  max-width: 138rem;
+
   grid-area: content;
   padding: 0 12.4rem;
+  
+  .inner{
+    display: flex;
+  }
+
+  .carousel{
+    cursor: grab;
+    overflow: hidden;
+  }
  
   
 `;
