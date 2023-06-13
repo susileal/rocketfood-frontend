@@ -4,7 +4,7 @@ import { IoIosArrowBack} from 'react-icons/io';
 import { Link, useNavigate } from "react-router-dom";
 
 import { Input } from "../../components/Input"
-import { HeaderUsers } from "../../components/HeaderUsers"
+import { Header } from "../../components/Header"
 import { SectionForm } from "../../components/SectionForm"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
@@ -49,7 +49,7 @@ export function Profile() {
   return (
     <Container>
 
-      <HeaderUsers/>
+      <Header/>
 
       <main>
 

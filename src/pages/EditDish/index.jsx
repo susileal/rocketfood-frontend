@@ -1,7 +1,8 @@
 import { IoIosArrowBack} from 'react-icons/io';
 import { AiOutlineUpload } from 'react-icons/ai';
-import { useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/auth"
 
 
 import { Header } from "../../components/Header"
@@ -21,28 +22,31 @@ import { Container, Form} from "./styles";
 
 export function EditDish() {
 
+  const { user } = useAuth();
+
   const [data, setData] = useState(null);
   const params = useParams();
+  const dish_id = params.id;
 
   const navigate = useNavigate()
-
   function handleBack(){
-    navigate(-1);
+    navigate("")
   }
+
 
   useEffect(() => {
     async function fetchDish() {
-    const response = await api.get(`/dishes/${params.id}`);
+    const response = await api.get(`/dishes/${dish_id}`);
     setData(response.data)
+    setFields(response.data)
     }
 
     fetchDish();
-  },[])
+  },[dish_id])
 
-
-  /*const [name, setName] = useState("");
+  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(null);
   const [category, setCategory] = useState("");
 
   
@@ -50,13 +54,32 @@ export function EditDish() {
   const [newIngredients, setNewIngredients] = useState("");
 
  
+  function setFields(data){
+    setName(data.name)
+    setPrice(data.price)
+    setIngredients(data.ingredients.map(ingredient => ingredient.name))
+    setDescription(data.description)
+    setCategory(data.category_id)
+  }
+
   function handleAddIngredients(){
+    if(!newIngredients){
+      return alert("Digite o nome do ingrediente");
+    }
     setIngredients( prevState => [...prevState, newIngredients]);
     setNewIngredients("");
   }
 
   function handleRemoveIngredients(deleted){
     setIngredients( prevState => prevState.filter(ingredient => ingredient !== deleted));
+  }
+
+  async function handleRemoveDish(){
+    const confirm = window.confirm(`Deseja realmente excluir o prato ${name}?`);
+    if(confirm) {
+      await api.delete(`/dishes/${dish_id}`);
+      navigate("/")
+    }
   }
 
   async function handleNewDish(){
@@ -78,7 +101,7 @@ export function EditDish() {
     }
 
     
-    await api.post("/dishes", {
+    await api.put(`/dishes/${dish_id}`, {
       name,
       category_id: category,
       description,
@@ -88,16 +111,23 @@ export function EditDish() {
     
     });
 
-    alert("Prato criado com sucesso");
+    alert(`Prato ${name} editado com sucesso`);
+    navigate("/")
    
-    }*/
+    }
+    
+   
+    if (!data) {
+      return <div>Carregando...</div>;
+    }
 
    
   return (
     <Container >
+      
       <Header/>
 
-    {
+    
     <main>
         
         <Link to="/">
@@ -114,24 +144,28 @@ export function EditDish() {
           
           <SectionForm title="Imagem do prato"> 
           
-            <Button title="Selecione imagem"> <AiOutlineUpload/> </Button>
+            <Button title="Selecione imagem para alterá-la"> <AiOutlineUpload/> </Button>
           </SectionForm>
           <SectionForm title="Nome" > 
           
             <Input 
               id="name"
-              placeholder="Ex.: Salada Ceasar"
-            >
+              placeholder="Ex.: Salada Ceasar"   
+              value={name}   
+              onChange={e =>  setName(e.target.value)}
+            />
             
-              {data.name}
-            </Input>
+        
               
           </SectionForm>
           <SectionForm title="Categoria" for="categoria"> 
-            <select name="categoria" id="category">
-              <option value="dish">Refeição</option>
-              <option value="dessert">Sobremesa</option>
-              <option value="drink">Bebida</option>
+            <select name="categoria" id="category" 
+            value={category}
+            onChange={e =>  setCategory(e.target.value)} >
+              <option value="">Selecione</option>
+              <option value="1">Refeição</option>
+              <option value="2">Sobremesa</option>
+              <option value="3">Bebida</option>
             </select>
            
           </SectionForm>
@@ -141,21 +175,33 @@ export function EditDish() {
         <div id='#section_2'>
         <SectionForm title="Ingredientes"> 
           
-          <div className='ingredients'>
-
-            <Ingredients 
-              value="Pão Naan"
+        <div className='ingredients'>
+        {
+            ingredients.map((ingredient, index) => (
+              <Ingredients
+              key={String(index)}
+              value={ingredient}
+              onClick={( ) => handleRemoveIngredients(ingredient)}
+              />
               
-            />
-
-        
+            ))
+          }
             <Ingredients 
-            placeholder="Adicionar" 
-            isNew 
+            isNew
+            placeholder="Adicionar"
+            value={newIngredients}
+            onChange={e => setNewIngredients(e.target.value)}
+            onClick={handleAddIngredients}
+            
             />
+          
+
+          </div>
+          
+
 
            
-          </div>
+        
         
           
         </SectionForm>
@@ -165,10 +211,10 @@ export function EditDish() {
               id="price"
               placeholder="R$0,00"
               type="number"
-          >
-            {data.price}
-          
-          </Input>
+              value={price} 
+              onChange={e =>  setPrice(e.target.value)}
+          />
+            
            
           
         </SectionForm>
@@ -178,25 +224,31 @@ export function EditDish() {
         <SectionForm title="Descrição"> 
           <Textarea
             placeholder="A Salada César é uma opção refrescante para o verão."
-          
-          >
-            {data.description}
-
-          </Textarea>
+            value={description}
+            onChange={e =>  setDescription(e.target.value)}
+         />
+            
         
         </SectionForm>
 
-     
-     
-      
-
+  
 
       <section id='buttonEdit'>
 
-        <Button title="Excluir prato" isDelete id="buttonDelete" />
+        <Button 
+          title="Excluir prato" 
+          isDelete 
+          id="buttonDelete" 
+          onClick={handleRemoveDish}
+        />
 
         <Link to="/">
-          <Button title="Salvar alterações" isSave id="buttonSave"  />
+          <Button 
+          title="Salvar alterações" 
+          isSave 
+          id="buttonSave"  
+          onClick={handleNewDish}
+          />
         
         </Link>
       </section>
@@ -205,7 +257,8 @@ export function EditDish() {
       </Form>
     </main>
 
-    }
+    
+ 
   
 
     <Footer></Footer>

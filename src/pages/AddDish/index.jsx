@@ -2,7 +2,9 @@ import { IoIosArrowBack} from 'react-icons/io';
 import { AiOutlineUpload } from 'react-icons/ai';
 import { Link } from "react-router-dom";
 
-import { useState } from "react";
+import { useState} from "react";
+import dish from "../../assets/dish.png";
+
 
 import { Header } from "../../components/Header"
 import { Textarea } from "../../components/Textarea"
@@ -18,22 +20,17 @@ import { api } from "../../services/api"
 import { Container, Form} from "./styles";
 
 export function AddDish() {
+ 
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
 
-
-  
-
   const [ingredients, setIngredients] = useState([]);
   const [newIngredients, setNewIngredients] = useState("");
 
-
-
-  // prevState - dentro dele tem todo o conteúdo atual antes dele ser atualizado
-  // filter - retorna uma nova lista baseado no que for aplicado
+  
  
   function handleAddIngredients(){
     setIngredients( prevState => [...prevState, newIngredients]);
@@ -95,8 +92,12 @@ export function AddDish() {
         <div id="#section_1">
           
           <SectionForm title="Imagem do prato"> 
-          
-            <Button title="Selecione imagem"> <AiOutlineUpload/> </Button>
+            <Button 
+              title="Selecione imagem"
+             
+            > 
+              <AiOutlineUpload/> 
+            </Button>
           </SectionForm>
           <SectionForm title="Nome" > 
             <Input  
@@ -176,10 +177,12 @@ export function AddDish() {
 
 
       </section>
+
         
       
 
       </Form>
+   
     </main>
 
     <Footer></Footer>

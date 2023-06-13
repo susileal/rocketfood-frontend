@@ -60,6 +60,7 @@ function AuthProvider({ children }){
 
   }
 
+
   useEffect(()=>{
     const token = localStorage.getItem("@rocketfood:token");
     const user = localStorage.getItem("@rocketfood:user");

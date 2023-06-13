@@ -14,6 +14,11 @@ export const Container = styled.div`
   > main{
     grid-area: content;
    
+
+    header{
+      margin: 2.4rem 12.2rem 4.2rem;
+    }
+   
    
   }
 
@@ -25,16 +30,15 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 15.5rem;
   
-  > header{
-    display: flex;
-    flex-direction: column;
-    margin: 2.4rem 0 15.5rem;
-    img{
+  
+ 
+    > img{
       width: 39.0rem;
-      margin: 4.2rem 4.7rem 0 0 ;
+      margin-right: 4.7rem ;
     }
-  }
+ 
   
   >div{
     width: 68.7rem;
@@ -62,16 +66,15 @@ export const Content = styled.div`
   #user {
     display: flex;
     align-items: center;
+    margin-top: 4.8rem;
 
     button {
+      margin-top: 0;
       width: 16.2rem;
     }
     
   }
 
-
-  
- 
   
 `;
 

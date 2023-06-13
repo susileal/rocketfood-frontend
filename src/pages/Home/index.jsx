@@ -1,13 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { Container, Content, Search } from "./styles";
-import { useNavigate } from "react-router-dom";
 import scone from "../../assets/scone.png";
-
 
 import { motion } from "framer-motion"
 
 import { api } from "../../services/api"
-
 
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
@@ -22,32 +19,21 @@ export function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [dishes, setDishes] = useState([]);
   const [width, setWidth] = useState(0);
-  const navigate = useNavigate()
-  
-
-
+ 
   function handleHeaderChange(searchTerm) {
     setSearchTerm(searchTerm);
-
   }
-
-  function handleDetails(id){
-    navigate(`/dish/${id}`);
-
-  }
-
- 
 
   useEffect(() => {
     async function fetchDishes() {
-      const response = await api.get(`/dishes?name=${searchTerm}`);
+      const response = await api.get(`/dishes?searchTerm=${searchTerm}`);
       setDishes(response.data)
+      console.log(response.data)
     }
     fetchDishes();
   },[searchTerm])
 
   useEffect(() => {
-    console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth);
     setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
   },[])
 
@@ -93,9 +79,7 @@ export function Home() {
               .map(dish => (    
                   <Card 
                     key={String(dish.id)}
-                    data={dish}
-                    onClick={() => handleDetails(dish.id)}
-                    
+                    data={dish}                   
                   />
 
                 ))
@@ -119,9 +103,7 @@ export function Home() {
                 
                   <Card 
                     key={String(dish.id)}
-                    data={dish}
-                    onClick={() => handleDetails(dish.id)}
-                   
+                    data={dish}                 
                   />
 
                 ))
@@ -145,7 +127,7 @@ export function Home() {
                   <Card 
                     key={String(dish.id)}
                     data={dish}
-                    onClick={() => handleDetails(dish.id)}
+                    
                    
                   />
 

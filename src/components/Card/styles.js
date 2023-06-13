@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 30.4rem;
-  height: 46.2rem;
+  height: 48rem;
   padding: 2.4rem;
   border-radius: 0.8rem;
   margin-right: 2.7rem;  
@@ -54,14 +54,13 @@ export const Container = styled.div`
       color: ${({theme}) => theme.COLORS.BLUE};
     }
   
-
-  > div{
+  .user{
     display: flex;
     justify-content: center;
     text-align: center;
     padding: 0 4.8rem;
     margin-top: 1.5rem;
-    
-  }
+  
+}
 
 `;

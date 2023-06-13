@@ -4,20 +4,26 @@ import { Link } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom"
 
 import { IoIosArrowBack} from 'react-icons/io';
+import { motion } from "framer-motion"
 import dish from "../../assets/dish.png";
 
 import { Header } from "../../components/Header"
+
+import {useAuth} from "../../hooks/auth.jsx"
 
 
 
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
-import { Tag } from "../../components/Tag"
+import { TagIngredients } from "../../components/TagIngredients"
+import { InputInclude } from "../../components/InputInclude"
 import { Footer } from "../../components/Footer"
 import { api } from "../../services/api"
 
 
 export function Dish(){
+
+  const {user} = useAuth()
 
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState(null);
@@ -26,7 +32,7 @@ export function Dish(){
   const navigate = useNavigate()
 
   function handleBack(){
-    navigate(-1);
+    navigate("/");
   }
 
   function handleHeaderChange(searchTerm) {
@@ -62,7 +68,6 @@ export function Dish(){
     {
       data && 
       <main>
-        <Content>
           <header>
            
               <ButtonText 
@@ -72,9 +77,14 @@ export function Dish(){
               > 
               <IoIosArrowBack/>
               </ButtonText>
-      
-            <img src={dish} alt="imagem de prato" />
-          </header>
+            </header>
+        <Content>
+          
+            <motion.img 
+               initial={{y: 100}}
+               animate={{y: 0}}  
+               transition={{duration: 0.9}}
+              src={dish} alt="imagem de prato" />
           <div>
             <h1> {data.name} </h1>
             <p>{data.description}</p>
@@ -84,7 +94,7 @@ export function Dish(){
               <section>
                 { 
                   data.ingredients.map( ingredient => (
-                  <Tag
+                  <TagIngredients
                     key={String(ingredient.id)}
                     title={ingredient.name}
                   />
@@ -92,11 +102,17 @@ export function Dish(){
                 }
               </section>
             }
-            
-            <Link to="/editDish">
+            {user.is_admin ? (
+            <Link to={`/editDish/${data.id}`}>
               <Button title="Editar prato" ></Button>
             </Link>
-
+            ):(
+              <div id="user">
+              <InputInclude value="01"></InputInclude>
+              <Button title="incluir - R$25,00"> </Button>
+            </div>
+            )
+            }
           </div>
 
       </Content>
