@@ -10,7 +10,21 @@ export const Container = styled.div`
   "search"
   "content"
   "footer";
-`;
+
+  
+  @media (max-width: 768px) {
+    
+   
+
+      width: 42.8rem;
+   
+    
+  
+  
+  
+  }
+
+  `;
 
 export const Search  = styled.div`
     grid-area: search;
@@ -27,13 +41,14 @@ export const Search  = styled.div`
     
     >div{
       margin-right: 10rem;
+    
       
-    h1{
-      font-size: 4.0rem;
+      h1{
+        font-size: 4.0rem;
       margin-bottom: 0.8rem;
       font-weight: 500;
     }
-
+    
     span{
       font-family: 'Roboto', sans-serif;
       font-style: normal;
@@ -42,28 +57,33 @@ export const Search  = styled.div`
       
     }
   }
-    
-    
+
+ 
   
   `;
 
 export const Content  = styled.div`
   max-width: 138rem;
-
+  
   grid-area: content;
   padding: 0 12.4rem;
   
   .inner{
     display: flex;
   }
-
+  
   .carousel{
     cursor: grab;
     overflow: hidden;
   }
- 
   
-`;
+  @media (max-width: 768px) {
+    
+    width: 42.8;
+  
+  }
+  
+  `;
 
 
 

@@ -24,6 +24,18 @@ export const Container = styled.footer`
     
   
   }
+
+  @media (max-width: 768px) {
+    
+    width: 42.8rem;
+    span{
+
+      margin-left: 0.8rem;
+    }
+ 
+
+      
+    }
   `;
 
 

@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 
@@ -10,6 +11,7 @@ import { ButtonText } from "../../components/ButtonText"
 import { Logo } from "../../components/Logo"
 
 import { Container, Form } from "./styles";
+
 
 
 
@@ -27,9 +29,12 @@ export function SignIn() {
 
   return (
     <Container>
-      <section>
-        <Logo title="food explorer" isFont/>
-      </section>
+  
+
+     
+
+      <Logo title="food explorer" isFont/>
+      
 
       <Form>
         <h1> Faça login </h1>
@@ -62,6 +67,7 @@ export function SignIn() {
 
         
       </Form>
+     
 
    
     </Container>

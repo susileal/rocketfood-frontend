@@ -5,14 +5,13 @@ import { useParams, useNavigate } from "react-router-dom"
 
 import { IoIosArrowBack} from 'react-icons/io';
 import { motion } from "framer-motion"
-import dish from "../../assets/dish.png";
 
 import { Header } from "../../components/Header"
 
 import {useAuth} from "../../hooks/auth.jsx"
 
 
-
+import imagePlaceHolder from "../../assets/sem-imagem.png"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 import { TagIngredients } from "../../components/TagIngredients"
@@ -25,10 +24,12 @@ export function Dish(){
 
   const {user} = useAuth()
 
-  const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState(null);
   const params = useParams();
+  const imageURL = data && data.image ? `${api.defaults.baseURL}/files/${data.image}` : imagePlaceHolder
+ 
 
+  useState
   const navigate = useNavigate()
 
   function handleBack(){
@@ -38,14 +39,6 @@ export function Dish(){
   function handleHeaderChange(searchTerm) {
     setSearchTerm(searchTerm);
   }
-
-  useEffect(() => {
-    async function fetchDishes() {
-      const response = await api.get(`/dishes?name=${searchTerm}`);
-      setDishes(response.data)
-    }
-    fetchDishes();
-  },[searchTerm])
 
   useEffect(() => {
     async function fetchDish() {
@@ -84,7 +77,7 @@ export function Dish(){
                initial={{y: 100}}
                animate={{y: 0}}  
                transition={{duration: 0.9}}
-              src={dish} alt="imagem de prato" />
+              src={imageURL} alt="imagem de prato" />
           <div>
             <h1> {data.name} </h1>
             <p>{data.description}</p>

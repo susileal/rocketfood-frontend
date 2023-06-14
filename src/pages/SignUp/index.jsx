@@ -44,9 +44,9 @@ export function SignUp() {
 
   return (
     <Container>
-      <section>
+     
         <Logo title="food explorer" isFont/>
-      </section>
+      
 
       <Form>
         <h1> Crie sua conta </h1>

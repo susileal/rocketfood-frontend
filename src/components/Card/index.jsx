@@ -10,14 +10,17 @@ import { BiPencil } from 'react-icons/bi';
 import { IoIosArrowForward } from 'react-icons/io';
 import { AiOutlineHeart } from 'react-icons/ai';
 
+import imagePlaceHolder from "../../assets/sem-imagem.png"
+
+import { api } from "../../services/api"
+
 import { useAuth } from "../../hooks/auth"
-
-import dish from "../../assets/dish.png";
-
 
 export function Card({ data, ...rest}) {
 
   const {user} = useAuth()
+  const imageURL = data && data.image ? `${api.defaults.baseURL}/files/${data.image}` : imagePlaceHolder
+
 
   return (
     <Container {...rest}>
@@ -34,7 +37,7 @@ export function Card({ data, ...rest}) {
 
       
         <Link to={`/dish/${data.id}`}>
-          <img src={dish} alt="imagem de prato" />
+          <img src={imageURL} alt="imagem de prato" />
           <h3> {data.name}<IoIosArrowForward/> </h3>
           <p> {data.description} </p>
           <span> R$ {data.price} </span>

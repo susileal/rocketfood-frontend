@@ -2,12 +2,24 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-    display: flex;
-    align-items: stretch;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ 
 
-  > section{
-    margin: 34.1rem 15.5rem;
-   
+   @media (max-width: 768px) {
+    
+    background-color: #000A0F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15.8rem;
+
+    >form{
+      background-color: #000A0F;
+    }
+
   }
 
 `;

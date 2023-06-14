@@ -1,15 +1,14 @@
 import { IoIosArrowBack} from 'react-icons/io';
-import { AiOutlineUpload } from 'react-icons/ai';
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 import { useState} from "react";
-import dish from "../../assets/dish.png";
 
 
 import { Header } from "../../components/Header"
 import { Textarea } from "../../components/Textarea"
 import { SectionForm } from "../../components/SectionForm"
 import { Input } from "../../components/Input"
+import { InputFile } from "../../components/InputFile"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 import { Ingredients } from "../../components/Ingredients"
@@ -29,6 +28,20 @@ export function AddDish() {
 
   const [ingredients, setIngredients] = useState([]);
   const [newIngredients, setNewIngredients] = useState("");
+
+  const [imageFile, setImageFile] = useState(null);
+  const [image, setImage] = useState(null);
+
+  const navigate = useNavigate()
+  function handleBack(){
+    navigate("/")
+  }
+
+  function handleChangeImage(event){
+    const file = event.target.files[0];
+    setImageFile(file);
+    setImage(file.name);
+  }
 
   
  
@@ -59,18 +72,25 @@ export function AddDish() {
       return alert("Selecione a categoria do prato.");
     }
 
-    
-    await api.post("/dishes", {
+    const responseCreate = await api.post("/dishes", {
       name,
       category_id: category,
       description,
       ingredients,
-      price
-
-    
+      price,    
     });
 
+    const dish_id = responseCreate.data.id
+
+    if(imageFile){
+      const fileUploadForm = new FormData();
+      fileUploadForm.append("image", imageFile);
+
+      await api.patch(`/dishes/${dish_id}/image`, fileUploadForm);
+    }
+
     alert("Prato criado com sucesso");
+    navigate("/")
    
     }
   
@@ -92,13 +112,14 @@ export function AddDish() {
         <div id="#section_1">
           
           <SectionForm title="Imagem do prato"> 
-            <Button 
-              title="Selecione imagem"
-             
-            > 
-              <AiOutlineUpload/> 
-            </Button>
+              <InputFile
+                title={image ? image :"Selecione a imagem"}
+                onChange={handleChangeImage}
+              > 
+               
+              </InputFile>
           </SectionForm>
+
           <SectionForm title="Nome" > 
             <Input  
               id="name"
@@ -168,12 +189,12 @@ export function AddDish() {
 
       <section>
 
-        <Link to="/">
+       
           <Button title="Salvar alterações" 
           onClick={handleNewDish}
           />
         
-        </Link>
+       
 
 
       </section>

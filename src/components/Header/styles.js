@@ -16,20 +16,39 @@ export const Container = styled.header`
     
   }
     >header{
-      display: flex;
-      flex-direction: column;
       text-align: right;
-      margin-right: 4.3rem;
-      
       span{
-          font-size: 1.2rem;
-          font-family: 'Roboto', sans-serif;
-          font-weight: 400;
-          color: ${({theme}) => theme.COLORS.BLUE};
+        font-size: 1.2rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        color: ${({theme}) => theme.COLORS.BLUE};
         }
 
     }
   
+
+    @media (max-width: 768px) {
+    
+      width: 42.8rem;
+      >header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+
+      }
+
+      button{
+        width: 2.4rem;
+        
+      }
+
+      
+   
+     
+      
+
+  }
 
   `;
 

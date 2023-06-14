@@ -28,7 +28,6 @@ export function Home() {
     async function fetchDishes() {
       const response = await api.get(`/dishes?searchTerm=${searchTerm}`);
       setDishes(response.data)
-      console.log(response.data)
     }
     fetchDishes();
   },[searchTerm])
@@ -40,6 +39,8 @@ export function Home() {
 
   return (
     <Container>
+
+      
 
      
       <Header onHeaderChange={handleHeaderChange}/>
@@ -69,7 +70,7 @@ export function Home() {
           <motion.div 
             className="inner"
             drag="x"
-            dragConstraints={{right:0, left: -width}}
+            dragConstraints={{right: 0, left: -width}}
             
           >
             { 
