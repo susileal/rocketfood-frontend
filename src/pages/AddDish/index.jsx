@@ -100,11 +100,14 @@ export function AddDish() {
   
     <main>
        
+       <header>
        <Link to="/">
        
         <ButtonText title="voltar" isFont> <IoIosArrowBack/></ButtonText>
        </Link>
+
         <h1> Adicionar prato </h1>
+       </header>
       
           
       <Form>

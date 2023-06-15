@@ -149,13 +149,15 @@ export function EditDish() {
 
     
     <main>
-        
+        <header>
+          
         <Link to="/">
         
         <ButtonText title="voltar" isFont> <IoIosArrowBack/></ButtonText>
         </Link>
        
         <h1> Editar prato </h1>
+        </header>
       
           
       <Form>
