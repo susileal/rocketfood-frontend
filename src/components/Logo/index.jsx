@@ -12,6 +12,7 @@ export function Logo({ title, isActive = false, isFont = false, ...rest}) {
       {...rest}
       isActive={isActive}
       isFont={isFont}
+     
     >
        <BsHexagonFill/>
 

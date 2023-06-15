@@ -4,35 +4,53 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-rows: 9.6rem 41.2rem auto 7.7rem;
+  grid-template-rows: 9.6rem auto 7.7rem;
   grid-template-areas:
   "header"
-  "search"
   "content"
   "footer";
 
-  
-  @media (max-width: 768px) {
-    
-   
+  > main{
+    grid-area: content;
 
-      width: 42.8rem;
-   
-    
-  
-  
-  
   }
+
+  
+
+
+
+  
+ 
 
   `;
 
-export const Search  = styled.div`
-    grid-area: search;
+
+
+export const Content  = styled.div`
+  max-width: 138rem;
+  
+  grid-area: content;
+  padding: 0 12.4rem;
+  
+  .inner{
+    display: flex;
+  }
+  
+  .carousel{
+    cursor: grab;
+    overflow: hidden;
+  }
+
+  > header{
+    width: 112.0rem;
+    height: 26.0rem ;
     display: flex;
     align-items: center;
     background: linear-gradient(180deg, #091E26 0%, #00131C 100%);
     border-radius: 0.8rem;
-    margin: 17.2rem 12.4rem 0;
+    margin-top: 17.2rem;
+
+   
     
     img{
       width: 58rem;
@@ -57,31 +75,50 @@ export const Search  = styled.div`
       
     }
   }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 1.2rem;
+   
+    
+   >header{
+    width: 42.9rem;
+     height: 8rem ;
+     
+     margin: 4.4rem 0;
+     
+
+     img{
+      width: 16rem;
+      margin-bottom: 3rem;
+     }
+
+     div{
+      
+    
+    
+       h1{
+          font-size: 1.6rem;
+          margin-bottom: 0.3rem;
+      }
+  
+      span{
+          font-size: 1.2rem;
+        
+      }
+     }
+
+
+
+   }
+
+}
 
  
-  
-  `;
 
-export const Content  = styled.div`
-  max-width: 138rem;
   
-  grid-area: content;
-  padding: 0 12.4rem;
   
-  .inner{
-    display: flex;
-  }
   
-  .carousel{
-    cursor: grab;
-    overflow: hidden;
-  }
-  
-  @media (max-width: 768px) {
-    
-    width: 42.8;
-  
-  }
   
   `;
 

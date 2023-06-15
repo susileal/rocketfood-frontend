@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { Container, Content, Search } from "./styles";
+
+import { Container, Content} from "./styles";
 import scone from "../../assets/scone.png";
+
 
 import { motion } from "framer-motion"
 
@@ -36,16 +38,22 @@ export function Home() {
     setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
   },[])
 
+ 
+
 
   return (
-    <Container>
+    <Container> 
 
       
 
      
       <Header onHeaderChange={handleHeaderChange}/>
 
-      <Search>
+      <main>
+
+
+      <Content>
+      <header> 
 
         <motion.img 
         initial={{y: 100}}
@@ -58,9 +66,7 @@ export function Home() {
           <span>Sinta o cuidado do preparo com ingredientes selecionados</span>
 
         </div>
-      </Search>
-
-      <Content>
+      </header>
 
         
       
@@ -78,7 +84,7 @@ export function Home() {
               dishes
               .filter(dish => (dish.category_id === 1))
               .map(dish => (    
-                  <Card 
+                  <Card className="card"
                     key={String(dish.id)}
                     data={dish}                   
                   />
@@ -102,7 +108,7 @@ export function Home() {
               .filter(dish => (dish.category_id === 2))
               .map(dish => (
                 
-                  <Card 
+                  <Card className="card"
                     key={String(dish.id)}
                     data={dish}                 
                   />
@@ -125,7 +131,7 @@ export function Home() {
               .filter(dish => (dish.category_id === 3))
               .map(dish => (
                 
-                  <Card 
+                  <Card className="card"
                     key={String(dish.id)}
                     data={dish}
                     
@@ -143,6 +149,8 @@ export function Home() {
 
       
       </Content>
+
+      </main>
 
      
         <Footer></Footer>

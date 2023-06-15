@@ -63,4 +63,43 @@ export const Container = styled.div`
   
 }
 
+@media (max-width: 768px) {
+    width: 21.0rem;
+    height: 29.2rem ;
+
+    > section{
+      svg{
+        font-size: 1.6rem;
+        margin-left: 15.0rem;
+        
+      }
+
+      
+    }
+    img{
+      width: 8.8rem;   
+    }
+
+  h3{
+    font-size: 1.2rem;
+    color: ${({theme}) => theme.COLORS.WHITE_100};
+    margin: 1.5rem 0;
+
+    svg{
+      font-size: 1.2rem;
+    }
+  }
+  
+  p{
+    display: none;
+
+  }
+
+  span{
+      font-size: 1.6rem;
+     
+    }
+   
+    }
+
 `;

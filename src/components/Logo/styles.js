@@ -6,7 +6,7 @@ export const Container = styled.div`
     align-items: center;
     
   > svg{
-    font-size: ${({ isFont}) => isFont ? "4.9rem" : "3rem"};
+    font-size: 3.0rem;
     border: none;
     cursor: pointer;
     color: ${({theme, isActive}) => isActive ? theme.COLORS.GRAY_200 : theme.COLORS.BLUE_100};
@@ -14,12 +14,25 @@ export const Container = styled.div`
  
 
     strong{
-      font-size: ${({ isFont}) => isFont ? "4.2rem" : "2.4rem"};
+      font-size: 2.4rem;
       font-family: 'Roboto', sans-serif;
       font-weight: 700; 
       color:  ${({theme, isActive}) => isActive ? theme.COLORS.GRAY_200 : theme.COLORS.WHITE};
      
       margin-left: 1.0rem;
+      
+    }
+
+    @media (max-width: 768px) {
+    
+   
+
+      strong{
+        font-size: ${({ isFont}) => isFont ? "2.1rem" : "1.5rem"};
+    }
+   
+ 
+
       
     }
  

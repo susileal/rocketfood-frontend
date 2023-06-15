@@ -27,12 +27,14 @@ export const Container = styled.header`
     }
   
 
-    @media (max-width: 768px) {
-    
-      width: 42.8rem;
+    @media(max-width: 768px)  {
+      width: 52.8rem;
       >header{
+        
         display: flex;
+        
         align-items: center;
+        margin: 6.0rem 2.8rem;
         justify-content: center;
         gap: 0.8rem;
 
@@ -40,6 +42,7 @@ export const Container = styled.header`
 
       button{
         width: 2.4rem;
+        margin-right: 6rem;
         
       }
 

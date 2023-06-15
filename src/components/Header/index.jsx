@@ -38,7 +38,7 @@ export function Header({ onHeaderChange = null }){
         </ButtonText>
         </MediaQuery>
     <Link to="/profile">
-          <Logo title="food explorer"> </Logo>
+          <Logo title="food explorer" isFont> </Logo>
           <MediaQuery minWidth={769}>
 
           <span >{user.is_admin ? "admin" : user.name}</span>
