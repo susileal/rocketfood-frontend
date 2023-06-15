@@ -16,6 +16,8 @@ export default createGlobalStyle `
     color: ${({ theme }) => theme.COLORS.WHITE_100};
 
     -webkit-font-smoothing: antialiased;
+   
+    margin: 0 auto; 
   }
 
   body, input, button, textarea{

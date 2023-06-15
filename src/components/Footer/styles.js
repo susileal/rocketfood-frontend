@@ -9,12 +9,16 @@ export const Container = styled.footer`
 
   background-color: ${({ theme}) => theme.COLORS.BACKGROUND_700};
 
+main{
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 12.3rem;
-  
+  margin-top: 2.4rem;
 
+  
+  
   
   >span{
     font-family: 'Roboto', sans-serif;
@@ -25,21 +29,21 @@ export const Container = styled.footer`
     
   
   }
+}
+
 
   @media (max-width: 768px) {
-    display: flex;
-    text-align:center;
+    margin-bottom: 0;
     
-    width: 52.8rem;
-    padding: 0 5rem;
+    main{
+      padding: 2rem 1rem;
+      background-color: ${({ theme}) => theme.COLORS.BACKGROUND_700};
 
-    span{
-      font-size: 1rem;
+      span{
+        font-size: 1rem;
+      }
     }
-   
- 
-
-      
+  
     }
   `;
 

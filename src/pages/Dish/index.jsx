@@ -61,24 +61,30 @@ export function Dish(){
     {
       data && 
       <main>
-          <header>
-           
+        <div className="buttondish">
+
               <ButtonText 
                 title="voltar" 
                 isFont 
                 onClick={handleBack}
+                
               > 
               <IoIosArrowBack/>
               </ButtonText>
-            </header>
+        </div>
         <Content>
           
+         
+           
             <motion.img 
                initial={{y: 100}}
                animate={{y: 0}}  
                transition={{duration: 0.9}}
               src={imageURL} alt="imagem de prato" />
           <div>
+           
+
+           
             <h1> {data.name} </h1>
             <p>{data.description}</p>
             

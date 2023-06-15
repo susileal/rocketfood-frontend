@@ -31,9 +31,12 @@ export function SignIn() {
     <Container>
   
 
-     
+     <main>
 
-      <Logo title="food explorer" isFont/>
+    <header>
+          <Logo title="food explorer" isFont/>
+
+    </header>
       
 
       <Form>
@@ -68,6 +71,8 @@ export function SignIn() {
         
       </Form>
      
+     </main>
+
 
    
     </Container>

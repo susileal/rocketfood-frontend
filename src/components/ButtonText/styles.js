@@ -12,11 +12,9 @@ export const Container = styled.button`
     font-weight: 500;
    
   
+    
 
-
-  .star{
-    margin-right: 8px;
-  }
+  
  
 `;
 

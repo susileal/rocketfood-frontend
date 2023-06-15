@@ -15,12 +15,7 @@ export const Container = styled.div`
 
   }
 
-  
 
-
-
-  
- 
 
   `;
 
@@ -78,22 +73,26 @@ export const Content  = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 0 1.2rem;
-   
+    background-color: #000A0F;
+    padding: 1.2rem;
     
-   >header{
-    width: 42.9rem;
-     height: 8rem ;
+
+ 
+    .headerHome{
+    width: 46.8rem;
+     height: 9rem ;
      
-     margin: 4.4rem 0;
+     margin: 4.4rem 4.4rem;
+    
      
 
      img{
-      width: 16rem;
+      width: 19rem;
       margin-bottom: 3rem;
      }
 
      div{
+      
       
     
     
@@ -106,6 +105,8 @@ export const Content  = styled.div`
           font-size: 1.2rem;
         
       }
+
+      
      }
 
 

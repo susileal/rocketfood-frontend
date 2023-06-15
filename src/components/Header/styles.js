@@ -5,46 +5,63 @@ export const Container = styled.header`
   grid-area: header;
   width: 100%;
 
+  
   background-color: ${({ theme}) => theme.COLORS.BACKGROUND_700};
+  
+  main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.4rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  >section{
-    width: 21.6rem;
-    
-  }
-    >header{
-      text-align: right;
-      span{
-        font-size: 1.2rem;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-        color: ${({theme}) => theme.COLORS.BLUE};
-        }
-
+    >section{
+      width: 21.6rem;
+      
     }
+      >header{
+        text-align: right;
+        span{
+          font-size: 1.2rem;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 400;
+          color: ${({theme}) => theme.COLORS.BLUE};
+          }
+  
+      }
+  }
+
   
 
     @media(max-width: 768px)  {
-      width: 52.8rem;
-      >header{
+    
+      main{
+        height: 11.4rem;
+        margin:0;
+     
         
-        display: flex;
         
-        align-items: center;
-        margin: 6.0rem 2.8rem;
-        justify-content: center;
-        gap: 0.8rem;
+        >header{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.8rem;
+          
+        }
+        
+        button{
+          width: 2.4rem;
+          margin-right: 4rem;
+          
+          
+        }
 
+        span{
+          margin-right: 4rem
+        }
       }
 
-      button{
-        width: 2.4rem;
-        margin-right: 6rem;
-        
-      }
+     
+      
 
       
    

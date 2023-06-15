@@ -65,7 +65,8 @@ export const Container = styled.div`
 
 @media (max-width: 768px) {
     width: 21.0rem;
-    height: 29.2rem ;
+    height: 29.8rem ;
+   
 
     > section{
       svg{
@@ -100,6 +101,24 @@ export const Container = styled.div`
      
     }
    
+    .user{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.6rem;
+      
+      
+      button{
+        width: 16.2rem;
+        height: 3.2rem;
+        font-size: 1.4rem;
+        margin-top: 0.8rem;
+        padding: 0.4rem;
     }
+  
+}
+    }
+
 
 `;

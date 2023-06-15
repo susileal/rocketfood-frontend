@@ -12,4 +12,14 @@ export const Container = styled.section`
     font-weight: 500;
   }
 
+  @media (max-width: 768px) {
+    
+   
+    margin: 2.8rem 0;
+
+    h2{
+      font-size: 2.4rem;
+    }
+  }
+
 `;

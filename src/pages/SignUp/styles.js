@@ -8,17 +8,21 @@ export const Container = styled.div`
  
 
    @media (max-width: 768px) {
-    
-    background-color: #000A0F;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15.8rem;
+    main{
 
-    >form{
+      margin: 0;
       background-color: #000A0F;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15.8rem;
+      >form{
+       width: 42.8rem;
+       background-color: #000A0F;
+     }
     }
+     
 
   }
 

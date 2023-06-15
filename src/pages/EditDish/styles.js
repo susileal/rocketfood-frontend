@@ -29,8 +29,10 @@ export const Container = styled.div`
     >main{
       margin: 0;
       background-color: #000A0F;
+      
+     
       header{
-        margin: 2.4rem 7.5rem;
+        margin: 2.4rem 6rem;
       }
     }
     
@@ -139,8 +141,8 @@ export const Form = styled.form`
 
   @media (max-width: 768px) {
    
-
    width: 36.4rem;
+  
 
    > div:nth-child(1){
     display: flex;
@@ -154,24 +156,22 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  #price {
-    width: 36.4rem;
-   
-  }
-  .ingredients{
-    width: 36.4rem;
-   
-  }
+
+      #price {
+        width: 36.4rem;
+      
+      }
+      .ingredients{
+        width: 36.4rem;
+      
+      }
    }
 
    #buttonEdit{
-   
-    
     #buttonSave{
       width: 17.2rem;
       
     }
-
     #buttonDelete{
       width: 16rem;
     }

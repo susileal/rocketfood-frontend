@@ -13,12 +13,34 @@ export const Container = styled.div`
 
   > main{
     grid-area: content;
-   
 
-    header{
-      margin: 2.4rem 12.2rem 4.2rem;
-    }
+  }
    
+    
+
+    .buttondish{
+      margin: 2.4rem 12.2rem 4.2rem;
+  
+    }
+
+    @media (max-width: 768px) {
+      padding: 0rem;
+      >main{
+      
+        background-color: #000A0F
+      
+      
+    }
+    
+    .buttondish{
+      background-color: #000A0F;
+      margin: 0;
+      padding: 1.6rem 5.6rem;
+
+
+
+    
+  }
    
   }
 
@@ -46,7 +68,7 @@ export const Content = styled.div`
     h1{
       font-size: 4.0rem;
       font-weight: 500;
-      line-height: 3.4rem
+      
     }
   
     p{
@@ -54,7 +76,7 @@ export const Content = styled.div`
       font-weight: 400;
       text-align: justify;
       margin: 2.4rem 0;
-      line-height: 3.4rem
+      
     }
   
     button{
@@ -73,6 +95,58 @@ export const Content = styled.div`
       width: 16.2rem;
     }
     
+  }
+
+  @media (max-width: 768px) {
+   
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    
+  
+    > img{
+      width: 26.3rem;
+      margin: 0;
+     
+    }
+
+    >div{
+    width: 34.6rem;
+    
+    text-align: center;
+    h1{
+      font-size: 2.4rem;
+    
+    }
+  
+    p{
+      font-size: 1.6rem;
+    
+    }
+  
+    button{
+  
+      width: 34.6rem;
+     margin-bottom: 4.9rem;
+  }
+}
+
+#user {
+
+    button {
+     margin: 0;
+      width: 16.2rem;
+    }
+    
+  }
+
+      
+ 
+    
+   
+
   }
 
   

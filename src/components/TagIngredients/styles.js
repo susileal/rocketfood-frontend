@@ -7,4 +7,10 @@ export const Container = styled.span`
   margin-right: 1.2rem;  
   color: ${({theme}) => theme.COLORS.WHITE};
   background-color: ${({theme}) => theme.COLORS.BACKGROUND_600};
+
+  @media (max-width: 767px) {
+   
+    margin-right: 3.2rem;
+    
+  }
 `;

@@ -44,7 +44,9 @@ export function SignUp() {
 
   return (
     <Container>
-     
+
+      <main>
+
         <Logo title="food explorer" isFont/>
       
 
@@ -85,6 +87,8 @@ export function SignUp() {
       </Link>
         
       </Form>
+      </main>
+     
 
    
     </Container>

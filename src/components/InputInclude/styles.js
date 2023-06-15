@@ -19,11 +19,11 @@ export const Container = styled.div`
 
   border: none;
   
- 
 
   > button{
     border: none;
     background: none;
+    display: flex;
 
   }
 
@@ -31,6 +31,7 @@ export const Container = styled.div`
     margin: 0 auto;
     color: ${({ theme}) => theme.COLORS.WHITE};
     font-size: 1.8rem;
+    display: flex;
   }
 
   .button-add{
@@ -66,6 +67,16 @@ export const Container = styled.div`
   input[type=number] { 
     -moz-appearance: textfield;
     appearance: textfield;
+
+  }
+
+  @media (max-width: 768px) {
+    height: 3.2rem;
+
+   
+    
+    
+
 
   }
 

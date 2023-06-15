@@ -5,7 +5,10 @@ export function TagIngredients({ title, ...rest}) {
 
   return (
     <Container {...rest}>
+      
+
        {title}
+     
     </Container>
   );
 }

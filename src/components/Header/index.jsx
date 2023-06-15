@@ -27,28 +27,47 @@ export function Header({ onHeaderChange = null }){
 
   
   return(
-    <Container >
+    <Container className="container" >
 
+<main>
 
     <header>
-    <MediaQuery maxWidth={768}>
+    <MediaQuery maxWidth={769}>
+    {user.is_admin ? (
         <ButtonText>
             <AiOutlineMenu/>
 
         </ButtonText>
+      ) : (
+        <ButtonText>
+            <AiOutlineMenu/>
+
+        </ButtonText>
+      )}
         </MediaQuery>
     <Link to="/profile">
-          <Logo title="food explorer" isFont> </Logo>
+          <Logo title="food explorer" isFontHeader isFontSvg> </Logo>
           <MediaQuery minWidth={769}>
 
           <span >{user.is_admin ? "admin" : user.name}</span>
           </MediaQuery>
 
     </Link>
-    <MediaQuery maxWidth={768}>
+    <MediaQuery maxWidth={769}>
 
         <span >{user.is_admin ? "admin" : user.name}</span>
     </MediaQuery>
+
+    <MediaQuery maxWidth={769}>
+    {user.is_admin ? (
+       <></>
+      ) : (
+        <ButtonText>
+            <CiReceipt/>
+
+        </ButtonText>
+      )}
+        </MediaQuery>
     </header>
 
     
@@ -82,6 +101,7 @@ export function Header({ onHeaderChange = null }){
    
     <Logout onClick={signOut}> <FiLogOut/> </Logout> 
     </MediaQuery>
+</main>
 
      
     </Container>

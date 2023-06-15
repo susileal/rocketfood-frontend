@@ -30,8 +30,10 @@ export const Container = styled.div`
     >main{
       margin: 0;
       background-color: #000A0F;
+      
+     
       header{
-        margin: 2.4rem 7.5rem;
+        margin: 2.4rem 6rem;
       }
     }
     
@@ -129,9 +131,10 @@ export const Form = styled.form`
   }
 
   @media (max-width: 768px) {
-   
-
-     width: 36.4rem;
+    
+    width: 36.4rem;
+    
+    
 
      > div:nth-child(1){
       display: flex;

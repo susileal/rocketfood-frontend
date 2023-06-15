@@ -14,7 +14,7 @@ export const Container = styled.div`
  
 
     strong{
-      font-size: 2.4rem;
+      font-size: ${({ isFont}) => isFont ? "4.0rem" : "2.4rem"};
       font-family: 'Roboto', sans-serif;
       font-weight: 700; 
       color:  ${({theme, isActive}) => isActive ? theme.COLORS.GRAY_200 : theme.COLORS.WHITE};
@@ -24,12 +24,14 @@ export const Container = styled.div`
     }
 
     @media (max-width: 768px) {
-    
-   
 
-      strong{
-        font-size: ${({ isFont}) => isFont ? "2.1rem" : "1.5rem"};
-    }
+        strong{
+          font-size: ${({ isFontHeader}) => isFontHeader ? "2.1rem" : "3.7rem"};
+        
+      }
+      > svg{
+        font-size: ${({ isFontSvg}) => isFontSvg ? "2.4rem" : "4.0rem"};
+      }
    
  
 

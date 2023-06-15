@@ -47,13 +47,13 @@ export function Home() {
       
 
      
-      <Header onHeaderChange={handleHeaderChange}/>
+      <Header onHeaderChange={handleHeaderChange} className="headerHome"/>
 
       <main>
 
 
       <Content>
-      <header> 
+      <header className="headerHome"> 
 
         <motion.img 
         initial={{y: 100}}
