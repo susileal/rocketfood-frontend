@@ -8,31 +8,31 @@ Este é um projeto/frontend que oferece funcionalidades relacionadas a um sistem
   - Simulando um restaurante de acordo com o layout disponibilizado no Figma;
   - Possui dois tipos de usuário: o admin e o usuário;
 
-  - Admin, responsável pelo restaurante, poderá:
-    - criar;
-    - visualizar;
-    - editar; e 
-    - apagar um prato
+ ### 1. Admin, responsável pelo restaurante, poderá:
+- criar;
+  - visualizar;
+  - editar; e 
+  - apagar um prato
     
-    - Prato deve conter: 
-      - imagem;
-      - nome;
-      - categoria;
-      - breve descrição;
-      - ingredientes; e 
-      - preço. 
-      - Ao clicar em adicionar prato, o admin receberá uma mensagem de sucesso e será redirecionado para a página principal;
+  - O Prato deve conter: 
+    - imagem;
+    - nome;
+    - categoria;
+    - breve descrição;
+    - ingredientes; e 
+    - preço. 
+- Ao clicar em adicionar prato, o admin receberá uma mensagem de sucesso e será redirecionado para a página principal;
 
-    Obs: O backend cria um usuário admin ao publicar a aplicação: 
+- Obs: O backend cria um usuário admin ao publicar a aplicação: 
     ```
     user:admin@admin.com 
     senha: 123456
     ```
 
-  - Usuário:
-      - Se cadastrar na aplicação como usuário comum (não admin)
-      - visualizar todos os pratos cadastrados do restaurante
-      - ao clicar em um prato, será redirecionado para uma nova tela com informações mais detalhadas sobre ele.
+### 2. O Usuário, cliente do restaurante, poderá:
+- Se cadastrar na aplicação
+- Visualizar todos os pratos cadastrados do restaurante
+- Detalhar um prato para ver mais informações sobre ele
 
 ## Imagens do sistema
 
