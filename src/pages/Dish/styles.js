@@ -113,7 +113,7 @@ export const Content = styled.div`
     }
 
     >div{
-    width: 34.6rem;
+    width: 31rem;
     
     text-align: center;
     h1{
@@ -127,10 +127,10 @@ export const Content = styled.div`
     }
   
     button{
-  
-      width: 34.6rem;
+      width: 31rem;
      margin-bottom: 4.9rem;
   }
+ 
 }
 
 #user {
@@ -141,6 +141,8 @@ export const Content = styled.div`
     }
     
   }
+
+  
 
       
  

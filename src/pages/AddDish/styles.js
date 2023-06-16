@@ -33,7 +33,7 @@ export const Container = styled.div`
       
      
       header{
-        margin: 2.4rem 6rem;
+        margin: 2.4rem 4rem;
       }
     }
     

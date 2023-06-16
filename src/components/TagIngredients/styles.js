@@ -8,9 +8,9 @@ export const Container = styled.span`
   color: ${({theme}) => theme.COLORS.WHITE};
   background-color: ${({theme}) => theme.COLORS.BACKGROUND_600};
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
    
     margin-right: 3.2rem;
-    
+  
   }
 `;
