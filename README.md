@@ -23,7 +23,11 @@ Este é um projeto/frontend que oferece funcionalidades relacionadas a um sistem
       - preço. 
       - Ao clicar em adicionar prato, o admin receberá uma mensagem de sucesso e será redirecionado para a página principal;
 
-    Obs: O backend cria um usuário admin ao publicar a aplicação: user -> admin@admin.com // senha: 123456
+    Obs: O backend cria um usuário admin ao publicar a aplicação: 
+    ```
+    user:admin@admin.com 
+    senha: 123456
+    ```
 
   - Usuário:
       - Se cadastrar na aplicação como usuário comum (não admin)
