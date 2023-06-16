@@ -1,7 +1,10 @@
 # Desafio Final do Curso Explorer
 
 ## Food Explorer
-Este é um projeto/frontend que oferece funcionalidades relacionadas a um sistema de entrega para restaurantes. Faz parte do projeto final do curso Explorer da RocketSeat. Consome a api [rocketfood-backend](https://github.com/susileal/rocketfood-backend)
+Este é um projeto/frontend que oferece funcionalidades relacionadas a um sistema de entrega para restaurantes. Faz parte do projeto final do curso Explorer da RocketSeat. 
+
+## Link para o aplicação
+[rocketfoods](https://rocketfoods.netlify.app/)
 
 ## Funcionalidades desta versão
   - Menu interativo para um restaurante fictício;
