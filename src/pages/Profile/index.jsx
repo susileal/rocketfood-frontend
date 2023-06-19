@@ -53,12 +53,12 @@ export function Profile() {
 
       <main>
 
-        <header>
+        <section id='headerProfile'>
             <Link to="/">
               <ButtonText title="voltar" isFont onClick={handleBack}> <IoIosArrowBack/></ButtonText>
             </Link>
   
-          </header>
+          </section>
 
       <Form>
         <h1> Atualizar conta </h1>

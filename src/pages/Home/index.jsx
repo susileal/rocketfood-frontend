@@ -27,7 +27,7 @@ export function Home() {
   const [widthSobremesa, setWidthSobremesa] = useState(0);
   const [widthBebida, setWidthBebida] = useState(0);
  
-  function handleHeaderChange(searchTerm) {
+  function handleSearchTermChange(searchTerm) {
     setSearchTerm(searchTerm);
   }
 
@@ -55,7 +55,7 @@ export function Home() {
       
 
      
-      <Header onHeaderChange={handleHeaderChange}/>
+      <Header onSearchTermChange={handleSearchTermChange}/>
 
       <main>
 

@@ -59,7 +59,7 @@ export const Container = styled.div`
     
       #home{
    
-      width: 37.6rem;
+      width: 34rem;
        height: 9rem ;
        margin-top: 4.4rem;
       

@@ -5,11 +5,12 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     
-  > svg{
-    font-size: 3.0rem;
-    border: none;
-    cursor: pointer;
-    color: ${({theme, isActive}) => isActive ? theme.COLORS.GRAY_200 : theme.COLORS.BLUE_100};
+    > svg{
+      font-size: 3.0rem;
+      border: none;
+      cursor: pointer;
+      color: ${({theme, isActive}) => isActive ? theme.COLORS.GRAY_200 : theme.COLORS.BLUE_100};
+      
   }
  
 

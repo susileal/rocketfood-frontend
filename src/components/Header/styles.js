@@ -14,10 +14,7 @@ export const Container = styled.header`
     justify-content: center;
     margin-top: 2.4rem;
 
-    >section{
-      width: 21.6rem;
-      
-    }
+   
       >header{
         text-align: right;
         span{
@@ -62,16 +59,6 @@ export const Container = styled.header`
       }
 
     }
-
-     
-      
-
-      
-   
-     
-      
-
-
 
   `;
 

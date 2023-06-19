@@ -15,17 +15,48 @@ export const Container = styled.div`
     grid-area: content;
     margin-bottom: 10rem;
 
-    header{
+    #headerProfile{
       margin: 1rem 15rem;
     }
   }
+
+  @media (max-width: 768px) {
+    
+    
+    >main{
+      margin: 0;
+      padding: 0;
+      background-color: #000A0F;
+     
+    
+      #headerProfile{
+        margin: 2.4rem 2.4rem 0;
+        
+      }
+
+      >form{
+        width: 36.4rem;
+       background-color: #000A0F;
+       margin-top: 2rem;
+       padding: 2rem;
+      
+      
+     }
+    }
+    
+   
+
+  }
+
+  
+
+  
   
 `;
 
 export const Form = styled.form`
-  width: 47.6rem;
+  max-width: 47.6rem;
   height: 68.1rem;
-  margin: 9.0rem 10.8rem 11.2rem;
   padding: 4.4rem;
   border-radius: 1.6rem;
   margin: auto;
@@ -39,7 +70,10 @@ export const Form = styled.form`
 
   button{
     margin: 3.2rem 0;
+
   }
+
+  
 
 
   

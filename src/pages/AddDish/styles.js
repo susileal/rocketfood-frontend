@@ -134,8 +134,6 @@ export const Form = styled.form`
     
     width: 36.4rem;
     
-    
-
      > div:nth-child(1){
       display: flex;
     flex-direction: column;

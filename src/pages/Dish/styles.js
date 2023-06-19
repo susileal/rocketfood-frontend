@@ -134,9 +134,9 @@ export const Content = styled.div`
 }
 
 #user {
-
+   
     button {
-     margin: 0;
+      margin: 0;
       width: 16.2rem;
     }
     

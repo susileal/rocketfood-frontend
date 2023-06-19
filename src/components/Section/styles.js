@@ -14,7 +14,7 @@ export const Container = styled.section`
 
   @media (max-width: 768px) {
     
-    width: 42.8rem;
+    width: 30rem;
     margin: 2.8rem 0;
 
     h2{
