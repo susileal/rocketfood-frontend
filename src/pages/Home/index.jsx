@@ -16,11 +16,16 @@ import { Card } from "../../components/Card"
 
 export function Home() {
 
-  const carousel = useRef()
+  const carouselRefeicao = useRef()
+  const carouselBebida = useRef()
+  const carouselSobremesa = useRef()
 
   const [searchTerm, setSearchTerm] = useState("");
   const [dishes, setDishes] = useState([]);
-  const [width, setWidth] = useState(0);
+
+  const [widthRefeicao, setWidthRefeicao] = useState(0);
+  const [widthSobremesa, setWidthSobremesa] = useState(0);
+  const [widthBebida, setWidthBebida] = useState(0);
  
   function handleHeaderChange(searchTerm) {
     setSearchTerm(searchTerm);
@@ -30,30 +35,32 @@ export function Home() {
     async function fetchDishes() {
       const response = await api.get(`/dishes?searchTerm=${searchTerm}`);
       setDishes(response.data)
+      setWidthRefeicao(210 * (getQuantidade(response.data, 1) - 1))
+      setWidthSobremesa(210 * (getQuantidade(response.data,2) - 1))
+      setWidthBebida(210 * (getQuantidade(response.data,3) - 1))
     }
     fetchDishes();
   },[searchTerm])
 
-  useEffect(() => {
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
-  },[])
+  function getQuantidade(data, category_id){
+    if(data){
+      return data.filter(dish => (dish.category_id === category_id)).length
+    }
+  }
 
  
-
-
   return (
     <Container> 
 
       
 
      
-      <Header onHeaderChange={handleHeaderChange} className="headerHome"/>
+      <Header onHeaderChange={handleHeaderChange}/>
 
       <main>
 
-
       <Content>
-      <header className="headerHome"> 
+      <div id="home"> 
 
         <motion.img 
         initial={{y: 100}}
@@ -63,21 +70,18 @@ export function Home() {
 
         <div>
           <h1> Sabores inigualáveis </h1>
-          <span>Sinta o cuidado do preparo com ingredientes selecionados</span>
+          <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
 
         </div>
-      </header>
-
-        
-      
+      </div>
 
       <Section title="Refeições">
-        <motion.div className="carousel" whileTap={{cursor:"grabbing"}}>
+        <motion.div ref={carouselRefeicao} className="carousel" whileTap={{cursor:"grabbing"}}>
           <motion.div 
             className="inner"
             drag="x"
-            dragConstraints={{right: 0, left: -width}}
-            
+            dragConstraints={{right: 0, left: -widthRefeicao}}
+           
           >
             { 
               
@@ -98,10 +102,11 @@ export function Home() {
 
       </Section>
       <Section title="Sobremesas">
-        <motion.div className="carousel" whileTap={{cursor:"grabbing"}}>
+        <motion.div ref={carouselSobremesa} className="carousel" whileTap={{cursor:"grabbing"}}>
           <motion.div 
             className="inner"
             drag="x"
+            dragConstraints={{right: 0, left: -widthSobremesa}}
           >
             { 
               dishes
@@ -120,11 +125,13 @@ export function Home() {
 
         </motion.div>
       </Section>
+      
       <Section title="Bebidas">
-      <motion.div className="carousel" whileTap={{cursor:"grabbing"}}>
+      <motion.div ref={carouselBebida} className="carousel" whileTap={{cursor:"grabbing"}}>
           <motion.div 
             className="inner"
             drag="x"
+            dragConstraints={{right: 0, left: -widthBebida}}
           >
             { 
               dishes

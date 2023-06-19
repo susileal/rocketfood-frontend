@@ -6,6 +6,7 @@ import { AddDish } from "../pages/AddDish"
 import { EditDish } from "../pages/EditDish"
 import { Profile } from "../pages/Profile"
 
+
 // na barra / vai ser renderizado a Home
 
 export function AppRoutes() {

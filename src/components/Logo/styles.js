@@ -14,7 +14,7 @@ export const Container = styled.div`
  
 
     strong{
-      font-size: ${({ isFont}) => isFont ? "4.0rem" : "2.4rem"};
+      font-size: ${({ isFont}) => isFont ? "4.2rem" : "2.4rem"};
       font-family: 'Roboto', sans-serif;
       font-weight: 700; 
       color:  ${({theme, isActive}) => isActive ? theme.COLORS.GRAY_200 : theme.COLORS.WHITE};

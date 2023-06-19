@@ -37,28 +37,32 @@ export const Container = styled.header`
       main{
         height: 11.4rem;
         margin:0;
+        padding: 0;
+        width: 30rem;
      
-        
+       
         
         >header{
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 0.8rem;
+          gap: 0.4rem;
           
         }
         
         button{
           width: 2.4rem;
-          margin-right: 4rem;
+          margin-right: 2rem;
           
+          span{
+            margin-right: 4rem
+          }
           
         }
 
-        span{
-          margin-right: 4rem
-        }
       }
+
+    }
 
      
       
@@ -68,7 +72,7 @@ export const Container = styled.header`
      
       
 
-  }
+
 
   `;
 

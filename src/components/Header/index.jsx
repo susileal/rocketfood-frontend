@@ -37,13 +37,13 @@ export function Header({ onHeaderChange = null }){
         <ButtonText>
             <AiOutlineMenu/>
 
-        </ButtonText>
+        </ButtonText> 
       ) : (
         <ButtonText>
             <AiOutlineMenu/>
 
         </ButtonText>
-      )}
+        )}
         </MediaQuery>
     <Link to="/profile">
           <Logo title="food explorer" isFontHeader isFontSvg> </Logo>

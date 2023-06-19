@@ -2,10 +2,14 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-   display: flex;
-   align-items: center;
-   justify-content: center;
- 
+
+>main{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 
    @media (max-width: 768px) {
     main{
@@ -16,10 +20,21 @@ export const Container = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 15.8rem;
+      padding-top: 12rem;
+      
+      header{
+        width: 42.8rem;
+        background-color: #000A0F;
+        padding: 0 6.5rem;
+      
+        
+      }
       >form{
-       width: 42.8rem;
+        width: 42.8rem;
        background-color: #000A0F;
+       margin-top: 4rem;
+      
+      
      }
     }
      

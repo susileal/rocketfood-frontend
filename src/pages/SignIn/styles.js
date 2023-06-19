@@ -22,16 +22,19 @@ export const Container = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-     
+      padding-top: 14rem;
       
       header{
         width: 42.8rem;
-        padding: 15.8rem 6.5rem;
+        background-color: #000A0F;
+        padding: 0 6.5rem;
+      
         
       }
       >form{
-        width: 42.8rem;
+      width: 42.8rem;
        background-color: #000A0F;
+       margin-top: 4rem;
       
      }
     }
