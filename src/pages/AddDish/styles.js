@@ -108,7 +108,7 @@ export const Form = styled.form`
 
     .ingredients{
       width: 83.7rem;
-      height: 4.8rem;
+      min-height: 4.8rem;
       display: flex;
       flex-wrap: wrap;
       gap: 1.6rem;
