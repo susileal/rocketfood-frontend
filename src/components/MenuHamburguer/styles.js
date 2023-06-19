@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   
+  display: flex;
+  justify-content: space-between;
 
 header{
   margin: 0;
@@ -20,11 +22,12 @@ header{
 /* Position and sizing of burger button */
 
 .bm-burger-button {
-  position: fixed;
+  position: relative;
   width: 1.6rem;
   height: 1.2rem;
-  left: 4rem;
-  top: 5rem;
+  right: 2rem;
+
+ 
  
 }
 
@@ -41,7 +44,7 @@ header{
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  position: fixed;
+  position: relative;
   height: 1.2rem;
   width: 1.2rem;
   margin: 4.8rem 24rem 0 0;
@@ -50,7 +53,7 @@ header{
 
 /* Color/shape of close button cross */
 .bm-cross {
-  position: fixed;
+  position: relative;
   background-color: ${({theme}) => theme.COLORS.WHITE};
   
 }
@@ -92,17 +95,19 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 
 
+
+
 `;
 
 export const Content = styled.div`
 width: 36rem;
 padding: 3.6rem 1.8rem 49.8rem;
 
+
 svg{
-  margin-left: 1rem;
+  margin-left: 1rem !important;
   width: 2rem;
 }
-
 input{
   padding: 1.2rem;
   font-size: 1.4rem;
