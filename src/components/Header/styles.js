@@ -38,7 +38,6 @@ export const Container = styled.header`
         height: 11.4rem;
         margin:0;
         padding: 0;
-        width: 30rem;
      
        
         
